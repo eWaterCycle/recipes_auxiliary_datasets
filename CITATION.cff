@@ -40,11 +40,12 @@ authors:
     family-names: Hut
     given-names: Rolf
 
-cff-version: "0.1.0"
+cff-version: "1.0.3"
 date-released: 2019-10-03
 doi: 
 keywords: 
-  - "eWaterCycle", "ESMValTool"
+  - "eWaterCycle"
+  - "ESMValTool"
 license: 
 message: "If you use this dataset, please cite it using these metadata."
 repository-code: "https://github.com/ewatercycle/recipes_auxiliary_datasets"
