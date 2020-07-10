@@ -1,4 +1,4 @@
-# Generate the catchment masks
+# Generate the catchment masks on jupyter.ewatercycle.org machine
 
 ## Environment variables
 
