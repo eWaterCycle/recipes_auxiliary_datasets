@@ -8,6 +8,8 @@ export SETUP_GLOBAL=Lisflood01degree
 export GRDC=$LOCAL_DIR/grdc
 ```
 
+The full global setup (`$LOCAL_DIR/$SETUP_GLOBAL`) will not be published.
+
 ## Build Docker container
 
 ```bash
