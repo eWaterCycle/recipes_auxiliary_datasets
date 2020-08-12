@@ -1,5 +1,10 @@
 # Generate masks on jupyter.ewatercycle.org machine
 
+The lisflood notebooks available at
+[era5-comparison repository](https://github.com/eWaterCycle/era5-comparison/tree/master/lisflood)
+require two files `catchment_masks.nc` and `model_mask.nc`.
+To re-generate those files, follow the instruction described below.
+
 ## Environment variables
 
 ```bash
@@ -8,19 +13,21 @@ export SETUP_GLOBAL=Lisflood01degree
 export GRDC=$LOCAL_DIR/grdc
 ```
 
-The full global setup (`$LOCAL_DIR/$SETUP_GLOBAL`) will not be published.
+Please note that the full global setup (`Lisflood01degree`) will not be published.
 
-## Docker container
+## Docker image
 
-lisflood docker image is available [on dockerhub](https://hub.docker.com/r/ewatercycle/lisflood).
+The docker image lisflood-grpc4bmi is available [on dockerhub](https://hub.docker.com/r/ewatercycle/lisflood-grpc4bmi).
 
-Alternatively, this file can be re-generated using instructions
+Alternatively, this image can be re-generated using instructions
 at [lisflood readme in era5-comparison repository](https://github.com/eWaterCycle/era5-comparison/tree/master/lisflood).
 
-## Generate the catchment and model masks
+## Create masks
 
-```docker
-docker run -ti --user $(id -u) -v $LOCAL_DIR/$SETUP_GLOBAL/maps_netcdf:/maps_netcdf -v $GRDC:/grdc -v $LOCAL_DIR/areamaps:/amaps --entrypoint python3 ewatercycle/lisflood:latest /opt/basin_station_processing/catchment.py /maps_netcdf/ldd.nc /opt/recipes_auxiliary_datasets/Lorentz_Basin_Shapefiles /grdc /amaps
+To re-generate mask files, run:
+
+```bash
+docker run -ti --user $(id -u) -v $LOCAL_DIR/$SETUP_GLOBAL/maps_netcdf:/maps_netcdf -v $GRDC:/grdc -v $LOCAL_DIR/areamaps:/amaps --entrypoint python3 ewatercycle/lisflood-grpc4bmi:latest /opt/basin_station_processing/catchment.py /maps_netcdf/ldd.nc /opt/recipes_auxiliary_datasets/Lorentz_Basin_Shapefiles /grdc /amaps
 ```
 
 Output:
