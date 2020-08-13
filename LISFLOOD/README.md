@@ -13,7 +13,7 @@ export SETUP_GLOBAL=Lisflood01degree
 export GRDC=$LOCAL_DIR/grdc
 ```
 
-Please note that the full global setup (`Lisflood01degree`) will not be published.
+Please note that the full global setup (`Lisflood01degree`) is not publicly available. Please contact the [Lisflood authors](https://ec-jrc.github.io/lisflood-model/) to request access
 
 ## Docker image
 
